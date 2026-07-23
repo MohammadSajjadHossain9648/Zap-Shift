@@ -10,17 +10,19 @@
   name: "light";
   default: true;
 }
+
 @theme {
   --color-primary_text: #606060;
   --color-secondary_text: #dadada;
-  --color-white: #ffffff;
   --color-title: #03373d;
+  --color-title_black: #303030;
   --color-active_btn: #1f1f1f;
   --color-active_nav_btn: #5b6a2e;
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
   --color-primary_black: #000000;
   --color-secondary_black: #1a1a1a;
+  --color-body_Bg: #f5f5f5;
   --color-footer_Bg: #0b0b0b;
   --color-form_black: #0f172a;
   --color-icon: #03464d;

@@ -8,9 +8,9 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-footer_Bg text-secondary_text p-5 md:p-20 rounded-4xl">
+        <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 rounded-4xl">
             <aside>
-                <Logo></Logo>
+                <Logo textColor='text-white'></Logo>
                 <p className="w-full md:w-[70%]">
                     Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to business shipments — we deliver on time, every time.
                 </p>
