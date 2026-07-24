@@ -14,7 +14,6 @@
 @theme {
   --color-primary_text: #606060;
   --color-secondary_text: #dadada;
-  --color-title: #03373d;
   --color-title_black: #303030;
   --color-active_btn: #1f1f1f;
   --color-active_nav_btn: #5b6a2e;
@@ -38,4 +37,9 @@
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.title {
+  color: #03373d;
+  font-weight: 800;
 }

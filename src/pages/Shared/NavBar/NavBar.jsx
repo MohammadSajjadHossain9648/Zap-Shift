@@ -36,12 +36,12 @@ const NavBar = () => {
             </div>
 
             <div className="navbar-end">
-                <div className="flex justify-between gap-2">
-                    <button className='btn rounded-xl'><NavLink to={'#'}>Sign In</NavLink></button>
+                <div className="flex justify-between flex-col md:flex-row gap-2">
+                    <button className='btn rounded-xl'><NavLink to={'#'} className={`md:text-xl text-xs`}>Sign In</NavLink></button>
                     <div className="flex justify-center items-center">
-                        <button className='btn rounded-xl'><NavLink to={'#'}>Be a rider</NavLink></button>
+                        <button className='btn rounded-xl'><NavLink to={'#'} className={`md:text-xl text-xs`}>Be a rider</NavLink></button>
                         <a href="#">
-                            <img src={aboveArrow} alt="aboveArrow icon" className='h-[150%]' />
+                            <img src={aboveArrow} alt="aboveArrow icon" className="md:w-10 md:h-10 w-8 h-8" />
                         </a>
                     </div>
                 </div>
