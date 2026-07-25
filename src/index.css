@@ -13,12 +13,12 @@
 
 @theme {
   --color-primary_text: #606060;
-  --color-secondary_text: #dadada;
+  /* --color-secondary_text: #dadada; */
   --color-title_black: #303030;
-  --color-active_btn: #1f1f1f;
   --color-active_nav_btn: #5b6a2e;
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
+  --color-green_bg: #03373d;
   --color-primary_black: #000000;
   --color-secondary_black: #1a1a1a;
   --color-body_Bg: #f5f5f5;
@@ -26,6 +26,7 @@
   --color-form_black: #0f172a;
   --color-icon: #03464d;
   --color-icon2: #50e13c;
+  /* --color-btn: #1f1f1f; */
 }
 
 .urbanist_font {
@@ -42,4 +43,14 @@
 .title {
   color: #03373d;
   font-weight: 800;
+}
+.title2 {
+  color: #ffffff;
+  font-weight: 800;
+}
+.subtitle2 {
+  color: #dadada;
+}
+.btn {
+  color: #1f1f1f;
 }
