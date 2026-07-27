@@ -19,6 +19,8 @@
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
   --color-green_bg: #03373d;
+  --color-faq_bg: #067a87;
+  --color-faq_green: #c3dfe2;
   --color-primary_black: #000000;
   --color-secondary_black: #1a1a1a;
   --color-body_Bg: #f5f5f5;
@@ -47,10 +49,16 @@
 .title2 {
   color: #ffffff;
   font-weight: 800;
+  font-size: 2.25rem;
 }
 .subtitle2 {
   color: #dadada;
 }
-.btn {
+.active_btn {
   color: #1f1f1f;
+  background: #caeb66;
+}
+.form_btn {
+  color: #000000;
+  background: #caeb66;
 }

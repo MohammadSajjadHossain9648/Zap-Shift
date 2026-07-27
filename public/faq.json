@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "How can I book a parcel pickup?",
+    "answer": "You can schedule a pickup by creating a shipment through our website. Enter the pickup and delivery details, confirm your booking, and our rider will collect your parcel from the specified location."
+  },
+  {
+    "id": 2,
+    "question": "How do I track my parcel?",
+    "answer": "After your parcel is booked, you'll receive a tracking ID. Enter the tracking ID on our Track Parcel page to view the real-time status of your shipment."
+  },
+  {
+    "id": 3,
+    "question": "Do you offer Cash on Delivery (COD)?",
+    "answer": "Yes. We provide Cash on Delivery services for eligible shipments. The collected payment is securely processed and transferred to the sender according to our settlement schedule."
+  },
+  {
+    "id": 4,
+    "question": "What areas do you deliver to?",
+    "answer": "We provide nationwide delivery services, covering major cities, towns, and districts. Delivery times may vary depending on the destination."
+  },
+  {
+    "id": 5,
+    "question": "What should I do if my parcel is delayed or damaged?",
+    "answer": "If your parcel is delayed or arrives damaged, please contact our customer support team immediately. We'll investigate the issue and provide a suitable resolution as quickly as possible."
+  }
+]

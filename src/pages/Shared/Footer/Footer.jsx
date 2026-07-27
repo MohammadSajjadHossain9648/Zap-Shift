@@ -8,7 +8,7 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 rounded-4xl">
+        <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 mt-10 md:mt-20 rounded-4xl">
             <aside>
                 <Logo textColor='text-white'></Logo>
                 <p className="w-full md:w-[70%]">

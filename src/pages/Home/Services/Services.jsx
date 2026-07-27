@@ -55,10 +55,8 @@ const Services = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 ">
                 {
                     servicesData.map(data => (
-                        <div key={data.id} className="rounded-xl bg-white p-5 text-center">
-                            <div className="flex justify-center">
-                                <img src={data.image} alt={`${data.title} icon`} className='w-10' />
-                            </div>
+                        <div key={data.id} className="rounded-xl bg-white p-5 flex flex-col items-center text-center">
+                            <img src={data.image} alt={`${data.title} icon`} className='w-10' />
                             <h1 className="title py-3">{data.title}</h1>
                             <p>{data.subtitle}</p>
                         </div>

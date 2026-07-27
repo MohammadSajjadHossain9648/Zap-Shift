@@ -34,7 +34,7 @@ const howItWorksData = [
 const HowItWorks = () => {
     return (
         <div className='w-11/12 mx-auto px-5 my-15 bg-white rounded-3xl'>
-            <h1 className="title text-xl">How it Works</h1>
+            <h1 className="title text-2xl">How it Works</h1>
 
             <div className="grid grid-flow-row md:grid-flow-col gap-10 py-5">
                 {
