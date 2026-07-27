@@ -5,6 +5,10 @@ import Services from '../Services/Services';
 import Companies from '../Companies/Companies';
 import Advertisement from '../Advertisement/Advertisement';
 import Merchant from '../Merchant/Merchant';
+import Reviews from '../Reviews/Reviews';
+
+const reviewsPromise = fetch('/reviews.json')
+    .then(res => res.json());
 
 const Home = () => {
     return (
@@ -15,6 +19,7 @@ const Home = () => {
             <Companies></Companies>
             <Advertisement></Advertisement>
             <Merchant></Merchant>
+            <Reviews reviewsPromise={reviewsPromise}></Reviews>
         </div>
     );
 };
