@@ -6,9 +6,14 @@ import Companies from '../Companies/Companies';
 import Advertisement from '../Advertisement/Advertisement';
 import Merchant from '../Merchant/Merchant';
 import Reviews from '../Reviews/Reviews';
+import Faq from '../Faq/Faq';
 
 const reviewsPromise = fetch('/reviews.json')
     .then(res => res.json());
+
+const faqPromise = fetch('/faq.json')
+    .then(res => res.json());
+
 
 const Home = () => {
     return (
@@ -20,6 +25,7 @@ const Home = () => {
             <Advertisement></Advertisement>
             <Merchant></Merchant>
             <Reviews reviewsPromise={reviewsPromise}></Reviews>
+            <Faq faqPromise={faqPromise}></Faq>
         </div>
     );
 };
