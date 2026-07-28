@@ -51,14 +51,21 @@
   font-weight: 800;
   font-size: 2.25rem;
 }
+.title3 {
+  color: #03373d;
+  font-weight: 800;
+  font-size: 2.25rem;
+}
 .subtitle2 {
   color: #dadada;
 }
 .active_btn {
   color: #1f1f1f;
   background: #caeb66;
+  font-weight: bold;
 }
 .form_btn {
   color: #000000;
   background: #caeb66;
+  font-weight: bold;
 }

@@ -11,10 +11,10 @@ import aboveArrow from '../../../assets/aboveArrow.png';
 const buttons = <>
     <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center">
-            <NavLink to="#" className="btn rounded-4xl">
+            <NavLink to="#" className="btn rounded-4xl font-bold">
                 Track Your Parcel
             </NavLink>
-            <img src={aboveArrow} alt="aboveArrow icon" className="w-9 h-9" />
+            <img src={aboveArrow} alt="aboveArrow icon" className="w-9 h-9 font-bold" />
         </div>
 
         <NavLink to="#" className="btn rounded-xl">

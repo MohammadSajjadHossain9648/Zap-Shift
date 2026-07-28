@@ -18,7 +18,7 @@ const Faq = ({ faqPromise }) => {
                 }
 
                 <div className="flex items-center justify-center">
-                    <NavLink to="#" className="btn rounded-2xl bg-secondary_green">
+                    <NavLink to="#" className="btn active_btn rounded-xl">
                         See More FAQ’s
                     </NavLink>
                     <img src={aboveArrow} alt="aboveArrow icon" className="w-9 h-9" />

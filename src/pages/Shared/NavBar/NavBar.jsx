@@ -10,6 +10,7 @@ const links = <>
     <li><NavLink to="/pricing">Pricing</NavLink></li>
     <li><NavLink to="/rider">Be a rider</NavLink></li>
 </>
+
 const NavBar = () => {
     return (
         <div className="navbar bg-white shadow-sm rounded-xl">
@@ -20,11 +21,11 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2">
                         {links}
                     </ul>
                 </div>
-                <a href='#'>
+                <a href='/'>
                     <Logo></Logo>
                 </a>
             </div>

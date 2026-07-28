@@ -13,8 +13,8 @@ const Merchant = () => {
                 <p className="subtitle py-5 md:w-4/5">We offer the lowest delivery charge with the highest value along with 100% safety of your product. Pathao courier delivers your parcels in every corner of Bangladesh right on time.</p>
 
                 <div className='flex flex-wrap items-center gap-4'>
-                    <NavLink to={'#'} className='btn bg-green_bg text-secondary_green border-2 border-secondary_green rounded-3xl'>Become a Merchant</NavLink>
-                    <NavLink to={'#'} className='btn bg-green_bg text-secondary_green border-2 border-secondary_green rounded-3xl'>Earn with ZapShift Courier</NavLink>
+                    <NavLink to={'#'} className='btn bg-green_bg text-secondary_green border-2 border-secondary_green rounded-3xl font-bold'>Become a Merchant</NavLink>
+                    <NavLink to={'#'} className='btn bg-green_bg text-secondary_green border-2 border-secondary_green rounded-3xl font-bold'>Earn with ZapShift Courier</NavLink>
                 </div>
                 <img src={location} alt={`location-merchant icon`} className='absolute right-5 bottom-5 md:right-10 md:bottom-10 w-50 md:w-xs lg:w-sm' />
             </div>
