@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 mt-10 md:mt-20 rounded-4xl">
             <aside>
-                <Logo textColor='text-white'></Logo>
+                <Logo textColor='text-white' size='text-2xl'></Logo>
                 <p className="w-full md:w-[70%]">
                     Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to business shipments — we deliver on time, every time.
                 </p>

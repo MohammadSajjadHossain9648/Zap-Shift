@@ -5,7 +5,7 @@ import NavBar from '../pages/Shared/NavBar/NavBar';
 
 const Root = () => {
     return (
-        <div className='urbanist_font max-w-7xl mx-auto p-5 md:p-10 text-primary_text bg-body_Bg'>
+        <div className='urbanist_font max-w-7xl mx-auto p-5 md:px-10 md:py-5 text-primary_text bg-body_Bg'>
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>

@@ -26,7 +26,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <a href='/'>
-                    <Logo></Logo>
+                    <Logo size='text-2xl'></Logo>
                 </a>
             </div>
 
