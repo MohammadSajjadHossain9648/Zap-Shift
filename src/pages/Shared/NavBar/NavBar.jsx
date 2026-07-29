@@ -38,7 +38,7 @@ const NavBar = () => {
 
             <div className="navbar-end">
                 <div className="flex justify-between flex-col md:flex-row gap-2">
-                    <NavLink to={'#'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
+                    <NavLink to={'/login'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
                     <div className="flex justify-center items-center">
                         <NavLink to={'#'} className={`btn rounded-xl text-primary_text`}>Be a rider</NavLink>
                         <a href="#">

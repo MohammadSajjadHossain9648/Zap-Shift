@@ -13,11 +13,13 @@
 
 @theme {
   --color-primary_text: #606060;
+  --color-auth_primary_text: #000000;
   /* --color-secondary_text: #dadada; */
   --color-title_black: #303030;
   --color-active_nav_btn: #5b6a2e;
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
+  --color-auth_green: #f2fada;
   --color-green_bg: #03373d;
   --color-faq_bg: #067a87;
   --color-faq_green: #c3dfe2;
