@@ -2,17 +2,29 @@ import React from 'react';
 import { NavLink } from 'react-router';
 import GoogleLogin from '../socialLogin/GoogleLogin';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../customHooks/useAuth';
 
 const Login = () => {
+    // react hook form
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
 
+    // authentication
+    const { loginUser } = useAuth();
+
     const handleLogin = (data) => {
-        console.log(data)
+        loginUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
+
     return (
         <div>
             <h1 className="auth_title">Welcome Back</h1>

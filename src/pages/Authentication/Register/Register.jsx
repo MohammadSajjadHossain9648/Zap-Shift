@@ -3,17 +3,28 @@ import image_upload from '../../../assets/image-upload-icon.png';
 import { NavLink } from 'react-router';
 import { useForm } from "react-hook-form";
 import GoogleLogin from '../socialLogin/GoogleLogin';
+import useAuth from '../../../customHooks/useAuth';
 
 
 const Register = () => {
+    // react hook form
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
     } = useForm()
 
+    // authentication
+    const { registerUser } = useAuth();
+
     const handleRegistration = (data) => {
-        console.log(data);
+        registerUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -45,7 +56,6 @@ const Register = () => {
                     <p role="alert" className='text-red-400'>Password must include an uppercase letter, a lowercase letter, a number, and a special character.</p>
                 )}
 
-                <NavLink to={'/forget_password'} className="link-hover text-auth_secondary_text">Forgot password?</NavLink>
                 <button className="btn form_btn">Register</button>
                 <p className="text-auth_secondary_text">Already have an account? <NavLink to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
                 <p className="text-auth_secondary_text mx-auto">Or</p>
