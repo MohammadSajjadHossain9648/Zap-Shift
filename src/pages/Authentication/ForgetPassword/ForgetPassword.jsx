@@ -9,7 +9,7 @@ const ForgetPassword = () => {
 
             <form className="fieldset my-3">
                 <label className="auth_label">Email</label>
-                <input type="email" name='email' className="input placeholder:text-placeholder_color" placeholder="Email" />
+                <input type="email" name='email' className="input w-full placeholder:text-placeholder_color" placeholder="Email" />
                 <button className="btn form_btn my-5">Send</button>
                 <p className="text-auth_secondary_text">Remember your password? <NavLink to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
             </form>

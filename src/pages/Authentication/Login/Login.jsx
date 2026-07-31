@@ -32,7 +32,7 @@ const Login = () => {
 
             <form onSubmit={handleSubmit(handleLogin)} className="fieldset my-3">
                 <label className="auth_label">Email</label>
-                <input type="email" className="input placeholder:text-placeholder_color" placeholder="Email"
+                <input type="email" className="input w-full placeholder:text-placeholder_color" placeholder="Email"
                     {...register("email", { required: true })}
                 />
                 {errors.firstName?.type === "required" && (
@@ -40,7 +40,7 @@ const Login = () => {
                 )}
 
                 <label className="auth_label">Password</label>
-                <input type="password" className="input placeholder:text-placeholder_color" placeholder="Password"
+                <input type="password" className="input w-full placeholder:text-placeholder_color" placeholder="Password"
                     {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/ })}
                 />
                 {errors.password?.type === "required" && (
