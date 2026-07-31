@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../../../components/Logo/Logo';
 import { NavLink } from 'react-router';
 import aboveArrow from '../../../assets/aboveArrow.png'
+import useAuth from '../../../customHooks/useAuth';
 
 const links = <>
     <li><NavLink to="/services">Services</NavLink></li>
@@ -12,6 +13,18 @@ const links = <>
 </>
 
 const NavBar = () => {
+    const { user, logOut } = useAuth();
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                console.log("successfully logout");
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className="navbar bg-white shadow-sm rounded-xl">
             <div className="navbar-start">
@@ -38,7 +51,11 @@ const NavBar = () => {
 
             <div className="navbar-end">
                 <div className="flex justify-between flex-col md:flex-row gap-2">
-                    <NavLink to={'/login'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
+                    {
+                        user ?
+                            <NavLink onClick={handleLogout} to={'/'} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
+                            <NavLink to={'/login'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
+                    }
                     <div className="flex justify-center items-center">
                         <NavLink to={'#'} className={`btn rounded-xl text-primary_text`}>Be a rider</NavLink>
                         <a href="#">
