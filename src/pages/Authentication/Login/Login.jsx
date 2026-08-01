@@ -58,7 +58,7 @@ const Login = () => {
                     <p role="alert" className='text-red-400'>Password must include an uppercase letter, a lowercase letter, a number, and a special character.</p>
                 )}
 
-                <NavLink to={'/forget_password'} className="link-hover text-auth_secondary_text">Forgot password?</NavLink>
+                <NavLink state={location.state} to={'/forget_password'} className="link-hover text-auth_secondary_text">Forgot password?</NavLink>
                 <button className="btn form_btn">Login</button>
                 <p className="text-auth_secondary_text">Don’t have any account? <NavLink state={location.state} to={'/register'} className='link-hover text-link_color'>Register</NavLink></p>
                 <p className="text-auth_secondary_text mx-auto">Or</p>

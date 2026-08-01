@@ -1,9 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import useAuth from '../../../customHooks/useAuth';
 import { useForm } from 'react-hook-form';
 
 const ForgetPassword = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const {
         register,
         formState: { errors },
@@ -15,7 +18,8 @@ const ForgetPassword = () => {
     const handleForgetPassword = (data) => {
         updateNewPassword(data.email)
             .then(() => {
-                console.log('Password reset email sent!')
+                console.log('Password reset email sent!');
+                navigate(location?.state || '/');
             })
             .catch((error) => {
                 console.log(error.code);
