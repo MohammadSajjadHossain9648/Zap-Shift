@@ -19,11 +19,12 @@ const Register = () => {
     const { registerUser, updateUserProfile } = useAuth();
 
     const handleRegistration = (data) => {
-        const profileImg = data.photo[0];
 
         registerUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+
+                const profileImg = data.photo[0];
 
                 // Create FormData
                 const formData = new FormData();
@@ -40,6 +41,7 @@ const Register = () => {
                             displayName: data.name,
                             photoURL: res.data.data.url
                         }
+
                         updateUserProfile(userProfile)
                             .then(() => {
                                 console.log('update profile successfully');
