@@ -1,6 +1,6 @@
 import React from 'react';
 import image_upload from '../../../assets/image-upload-icon.png';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { useForm } from "react-hook-form";
 import GoogleLogin from '../socialLogin/GoogleLogin';
 import useAuth from '../../../customHooks/useAuth';
@@ -8,6 +8,9 @@ import axios from 'axios';
 
 
 const Register = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
     // react hook form
     const {
         register,
@@ -23,6 +26,7 @@ const Register = () => {
         registerUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+                console.log('after register location ', location);
 
                 const profileImg = data.photo[0];
 
@@ -45,6 +49,7 @@ const Register = () => {
                         updateUserProfile(userProfile)
                             .then(() => {
                                 console.log('update profile successfully');
+                                navigate(location?.state || '/');
                             })
                             .catch(error => {
                                 console.log(error);
@@ -103,7 +108,7 @@ const Register = () => {
                 )}
 
                 <button className="btn form_btn">Register</button>
-                <p className="text-auth_secondary_text">Already have an account? <NavLink to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
+                <p className="text-auth_secondary_text">Already have an account? <NavLink state={location.state} to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
                 <p className="text-auth_secondary_text mx-auto">Or</p>
                 <GoogleLogin name='Register'></GoogleLogin>
             </form>

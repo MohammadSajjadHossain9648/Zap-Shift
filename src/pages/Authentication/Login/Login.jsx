@@ -1,11 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import GoogleLogin from '../socialLogin/GoogleLogin';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../customHooks/useAuth';
 
 const Login = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
     // react hook form
+
     const {
         register,
         handleSubmit,
@@ -19,6 +23,7 @@ const Login = () => {
         loginUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+                navigate(location?.state || '/');
             })
             .catch(error => {
                 console.log(error);
@@ -55,7 +60,7 @@ const Login = () => {
 
                 <NavLink to={'/forget_password'} className="link-hover text-auth_secondary_text">Forgot password?</NavLink>
                 <button className="btn form_btn">Login</button>
-                <p className="text-auth_secondary_text">Don’t have any account? <NavLink to={'/register'} className='link-hover text-link_color'>Register</NavLink></p>
+                <p className="text-auth_secondary_text">Don’t have any account? <NavLink state={location.state} to={'/register'} className='link-hover text-link_color'>Register</NavLink></p>
                 <p className="text-auth_secondary_text mx-auto">Or</p>
                 <GoogleLogin></GoogleLogin>
             </form>

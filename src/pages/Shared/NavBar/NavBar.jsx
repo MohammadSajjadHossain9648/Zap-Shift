@@ -53,11 +53,11 @@ const NavBar = () => {
                 <div className="flex justify-between flex-col md:flex-row gap-2">
                     {
                         user ?
-                            <NavLink onClick={handleLogout} to={'/'} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
+                            <NavLink onClick={handleLogout} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
                             <NavLink to={'/login'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
                     }
                     <div className="flex justify-center items-center">
-                        <NavLink to={'#'} className={`btn rounded-xl text-primary_text`}>Be a rider</NavLink>
+                        <NavLink onClick={handleLogout} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink>
                         <a href="#">
                             <img src={aboveArrow} alt="aboveArrow icon" className="md:w-10 md:h-10 w-8 h-8" />
                         </a>

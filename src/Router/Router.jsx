@@ -6,6 +6,8 @@ import Authentication from "../Layout/Authentication";
 import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import ForgetPassword from "../pages/Authentication/ForgetPassword/ForgetPassword";
+import PrivateRouter from "./PrivateRouter";
+import Rider from "../pages/Rider/Rider";
 
 export const router = createBrowserRouter([
     // Root layout
@@ -21,6 +23,12 @@ export const router = createBrowserRouter([
                 path: 'coverage',
                 Component: Coverage,
                 loader: () => fetch('/warehouses.json').then(res => res.json())
+            },
+            {
+                path: 'rider',
+                element: <PrivateRouter>
+                    <Rider></Rider>
+                </PrivateRouter>
             }
         ]
     },
