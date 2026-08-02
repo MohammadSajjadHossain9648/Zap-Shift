@@ -4,13 +4,18 @@ import { NavLink } from 'react-router';
 import aboveArrow from '../../../assets/aboveArrow.png'
 import useAuth from '../../../customHooks/useAuth';
 
-const links = <>
-    <li><NavLink to="/services">Services</NavLink></li>
-    <li><NavLink to="/coverage">Coverage</NavLink></li>
-    <li><NavLink to="/about_us">About Us</NavLink></li>
-    <li><NavLink to="/pricing">Pricing</NavLink></li>
-    <li><NavLink to="/rider">Be a rider</NavLink></li>
-</>
+const activeClass = ({ isActive }) =>
+    `hover:bg-secondary_green hover:text-active_navbar hover:font-bold hover:rounded-full ${isActive ? "bg-secondary_green text-active_navbar font-bold rounded-full" : ""}`
+
+const links = (
+    <>
+        <li><NavLink to="/services" className={activeClass}>Services</NavLink></li>
+        <li><NavLink to="/coverage" className={activeClass}>Coverage</NavLink></li>
+        <li><NavLink to="/about_us" className={activeClass}>About Us</NavLink></li>
+        <li><NavLink to="/send_parcel" className={activeClass}>Send Parcel</NavLink></li>
+        <li><NavLink to="/rider" className={activeClass}>Be a Rider</NavLink></li>
+    </>
+);
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
@@ -53,11 +58,11 @@ const NavBar = () => {
                 <div className="flex justify-between flex-col md:flex-row gap-2">
                     {
                         user ?
-                            <NavLink onClick={handleLogout} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
-                            <NavLink to={'/login'} className={`btn rounded-xl text-primary_text`}>Sign In</NavLink>
+                            <NavLink onClick={handleLogout} className={`btn active_btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
+                            <NavLink to={'/login'} className={`btn active_btn rounded-xl text-primary_text`}>Sign In</NavLink>
                     }
                     <div className="flex justify-center items-center">
-                        <NavLink onClick={handleLogout} className={`btn rounded-xl text-primary_text`}>Sign Out</NavLink>
+                        <NavLink to={'/register'} className={`btn active_btn rounded-xl text-primary_text`}>Sign Up</NavLink>
                         <a href="#">
                             <img src={aboveArrow} alt="aboveArrow icon" className="md:w-10 md:h-10 w-8 h-8" />
                         </a>

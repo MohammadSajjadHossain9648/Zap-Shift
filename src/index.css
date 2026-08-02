@@ -18,6 +18,7 @@
   --color-active_nav_btn: #5b6a2e;
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
+  --color-active_navbar: #5b6a2e;
   --color-auth_green: #f2fada;
   --color-green_bg: #03373d;
   --color-faq_bg: #067a87;
@@ -66,7 +67,7 @@
 .subtitle2 {
   color: #dadada;
 }
-.active_btn {
+.active_btn:hover {
   color: #1f1f1f;
   background: #caeb66;
   font-weight: bold;
