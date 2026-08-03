@@ -18,6 +18,7 @@
   --color-active_nav_btn: #5b6a2e;
   --color-primary_green: #acc857;
   --color-secondary_green: #caeb66;
+  --color-radio: #0ab010;
   --color-active_navbar: #5b6a2e;
   --color-auth_green: #f2fada;
   --color-green_bg: #03373d;
@@ -89,4 +90,9 @@
 .form_btn2 {
   color: #000000;
   background: #e9ecf1;
+}
+.form_subtitle {
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
