@@ -3,14 +3,25 @@ import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router';
 
 const SendParcel = () => {
-    const [toggle, setToggle] = useState(true);
-    const warehouseData = useLoaderData();
-
     const {
         register,
         handleSubmit,
+        watch,
         formState: { errors },
     } = useForm()
+
+    const [toggle, setToggle] = useState(true);
+    const warehouseData = useLoaderData();
+    const uniqueRegions = [...new Set(warehouseData.map(item => item.region))];
+
+    const districtsByRegions = (region) => {
+        const regionData = warehouseData.filter(data => data.region === region);
+        const districts = regionData.map(data => data.district);
+        return districts;
+    }
+    const sender_Region = watch('senderRegion');
+    const receiver_Region = watch('receiverRegion');
+
 
     const handleSendParcel = (data) => {
         console.log(data);
@@ -107,14 +118,30 @@ const SendParcel = () => {
                                 )}
                             </fieldset>
                             <fieldset className="fieldset">
+                                <legend className="fieldset-legend form_subtitle">Your Region</legend>
+                                <select defaultValue="" className="select w-full"
+                                    {...register('senderRegion', { required: true })}
+                                >
+                                    <option value="" disabled={true}>Select your Region</option>
+                                    {
+                                        uniqueRegions.map((data, index) => (
+                                            <option key={index} value={data}>{data}</option>
+                                        ))
+                                    }
+                                </select>
+                                {errors.senderRegion?.type === "required" && (
+                                    <p role="alert" className='text-red-400'>Sender Region is required</p>
+                                )}
+                            </fieldset>
+                            <fieldset className="fieldset">
                                 <legend className="fieldset-legend form_subtitle">Your District</legend>
                                 <select defaultValue="" className="select w-full"
                                     {...register('senderDistrict', { required: true })}
                                 >
                                     <option value="" disabled={true}>Select your District</option>
                                     {
-                                        warehouseData.map((data, index) => (
-                                            <option key={index} value={data.district}>{data.district}</option>
+                                        districtsByRegions(sender_Region).map((data, index) => (
+                                            <option key={index} value={data}>{data}</option>
                                         ))
                                     }
                                 </select>
@@ -173,14 +200,30 @@ const SendParcel = () => {
                                 )}
                             </fieldset>
                             <fieldset className="fieldset">
+                                <legend className="fieldset-legend form_subtitle">Receiver Region</legend>
+                                <select defaultValue="" className="select w-full"
+                                    {...register('receiverRegion', { required: true })}
+                                >
+                                    <option value="" disabled={true}>Select your Region</option>
+                                    {
+                                        uniqueRegions.map((data, index) => (
+                                            <option key={index} value={data}>{data}</option>
+                                        ))
+                                    }
+                                </select>
+                                {errors.receiverRegion?.type === "required" && (
+                                    <p role="alert" className='text-red-400'>Receiver Region is required</p>
+                                )}
+                            </fieldset>
+                            <fieldset className="fieldset">
                                 <legend className="fieldset-legend form_subtitle">Receiver District</legend>
                                 <select defaultValue="" className="select w-full"
                                     {...register('receiverDistrict', { required: true })}
                                 >
-                                    <option value="" disabled={true}>Select your District</option>
+                                    <option value="" disabled={true}>Select Receiver District</option>
                                     {
-                                        warehouseData.map((data, index) => (
-                                            <option key={index} value={data.district}>{data.district}</option>
+                                        districtsByRegions(receiver_Region).map((data, index) => (
+                                            <option key={index} value={data}>{data}</option>
                                         ))
                                     }
                                 </select>
