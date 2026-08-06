@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { useLoaderData } from 'react-router';
 
 const SendParcel = () => {
     const {
         register,
         handleSubmit,
-        watch,
+        control,
         formState: { errors },
     } = useForm()
 
@@ -19,8 +19,8 @@ const SendParcel = () => {
         const districts = regionData.map(data => data.district);
         return districts;
     }
-    const sender_Region = watch('senderRegion');
-    const receiver_Region = watch('receiverRegion');
+    const sender_Region = useWatch({ control, name: 'senderRegion' });
+    const receiver_Region = useWatch({ control, name: 'receiverRegion' });
 
 
     const handleSendParcel = (data) => {
