@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
+import useAuth from '../../customHooks/useAuth';
 
 const SendParcel = () => {
     const {
@@ -10,6 +11,8 @@ const SendParcel = () => {
         control,
         formState: { errors },
     } = useForm()
+
+    const { user } = useAuth();
 
     const [toggle, setToggle] = useState(true);
     const warehouseData = useLoaderData();
@@ -126,6 +129,7 @@ const SendParcel = () => {
                             <fieldset className="fieldset">
                                 <label className="label form_subtitle">Sender Name</label>
                                 <input type="text" className="input w-full placeholder:text-placeholder_color" placeholder="Sender Name"
+                                    defaultValue={user?.displayName}
                                     {...register('senderName', { required: true })}
                                 />
                                 {errors.senderName?.type === "required" && (
@@ -135,6 +139,7 @@ const SendParcel = () => {
                             <fieldset className="fieldset">
                                 <label className="label form_subtitle">Sender Email</label>
                                 <input type="email" className="input w-full placeholder:text-placeholder_color" placeholder="Sender Email"
+                                    defaultValue={user?.email}
                                     {...register('senderEmail', { required: true })}
                                 />
                                 {errors.senderEmail?.type === "required" && (
