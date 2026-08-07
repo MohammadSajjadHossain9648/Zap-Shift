@@ -55,17 +55,24 @@ const NavBar = () => {
             </div>
 
             <div className="navbar-end">
-                <div className="flex justify-between flex-col md:flex-row gap-2">
+                <div className="flex justify-between flex-col md:flex-row md:gap-2">
                     {
                         user ?
                             <NavLink onClick={handleLogout} className={`btn active_btn rounded-xl text-primary_text`}>Sign Out</NavLink> :
                             <NavLink to={'/login'} className={`btn active_btn rounded-xl text-primary_text`}>Sign In</NavLink>
                     }
                     <div className="flex justify-center items-center">
-                        <NavLink to={'/register'} className={`btn active_btn rounded-xl text-primary_text`}>Sign Up</NavLink>
-                        <a href="#">
-                            <img src={aboveArrow} alt="aboveArrow icon" className="md:w-10 md:h-10 w-8 h-8" />
-                        </a>
+                        {
+                            user ?
+                                '' :
+                                <>
+                                    <NavLink to={'/register'} className={`btn active_btn rounded-xl text-primary_text`}>Sign Up</NavLink>
+                                    <a href="#">
+                                        <img src={aboveArrow} alt="aboveArrow icon" className="md:w-10 md:h-10 w-8 h-8" />
+                                    </a>
+                                </>
+                        }
+
                     </div>
                 </div>
             </div>

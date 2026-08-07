@@ -3,6 +3,7 @@ import { useForm, useWatch } from 'react-hook-form';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 import useAuth from '../../customHooks/useAuth';
+import useAxiosSecure from '../../customHooks/useAxiosSecure';
 
 const SendParcel = () => {
     const {
@@ -13,6 +14,7 @@ const SendParcel = () => {
     } = useForm()
 
     const { user } = useAuth();
+    const axiosSecure = useAxiosSecure();
 
     const [toggle, setToggle] = useState(true);
     const warehouseData = useLoaderData();
@@ -54,15 +56,21 @@ const SendParcel = () => {
 
         // confirm user to send parcel by using sweetalert2
         Swal.fire({
-            title: "Agree with the cost?",
-            text: 'You will be charged ${cost} take only',
-            icon: "warning",
+            title: "Confirm Parcel",
+            text: `Your parcel delivery charge is ৳${price}. Do you agree to pay this amount?`,
+            icon: "question",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, i agree!"
+            confirmButtonText: "Agree & Continue",
+            cancelButtonText: "Cancel",
+            confirmButtonColor: "#caeb66",
         }).then((result) => {
             if (result.isConfirmed) {
+                // save the parcel info to the database
+                axiosSecure.post('/parcels', data)
+                    .then(res => {
+                        console.log('after saving data in database: ', res.data);
+                    })
+
                 // Swal.fire({
                 //     title: "Deleted!",
                 //     text: "Your file has been deleted.",
