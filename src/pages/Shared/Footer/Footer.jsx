@@ -10,7 +10,9 @@ const Footer = () => {
     return (
         <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 mt-10 md:mt-20 rounded-4xl">
             <aside>
-                <Logo textColor='text-white' size='text-2xl'></Logo>
+                <NavLink to='/' onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                    <Logo textColor='text-white' size='text-2xl'></Logo>
+                </NavLink>
                 <p className="w-full md:w-[70%]">
                     Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to business shipments — we deliver on time, every time.
                 </p>
@@ -19,7 +21,7 @@ const Footer = () => {
             <div className="w-full border-t-2 border-b-2 border-dashed border-icon py-4">
                 <ul className='grid grid-flow-row md:grid-flow-col gap-4 md:gap-8'>
                     <li><NavLink to={'#'}>Services</NavLink></li>
-                    <li><NavLink to={'#'}>Coverage</NavLink></li>
+                    <li><NavLink to={'/coverage'}>Coverage</NavLink></li>
                     <li><NavLink to={'#'}>About Us</NavLink></li>
                     <li><NavLink to={'#'}>Pricing</NavLink></li>
                     <li><NavLink to={'#'}>Blog</NavLink></li>

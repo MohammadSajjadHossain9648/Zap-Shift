@@ -43,9 +43,9 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <a href='/'>
+                <NavLink to='/'>
                     <Logo size='text-2xl'></Logo>
-                </a>
+                </NavLink>
             </div>
 
             <div className="navbar-center hidden lg:flex">
