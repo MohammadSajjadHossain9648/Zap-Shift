@@ -38,6 +38,10 @@
   --color-auth_secondary_text: #71717a;
   --color-placeholder_color: #94a3b8;
   --color-link_color: #8fa748;
+
+  /* pricing page color */
+  --color-reset_btn: #73863a;
+  --color-reset_btn_bg: #fafdf0;
 }
 
 .urbanist_font {

@@ -3,7 +3,7 @@ import Logo from '../components/Logo/Logo';
 import { Outlet } from 'react-router';
 import authImage from '../assets/authImage.png';
 
-const Authentication = () => {
+const AuthLayout = () => {
     return (
         <div className="flex flex-col md:flex-row inter_font max-w-7xl mx-auto text-auth_primary_text">
             <div className="bg-white md:w-[60%] p-5 lg:px-10 md:py-5">
@@ -22,4 +22,4 @@ const Authentication = () => {
     );
 };
 
-export default Authentication;
+export default AuthLayout;

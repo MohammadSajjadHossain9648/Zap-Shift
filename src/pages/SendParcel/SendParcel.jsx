@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 import useAuth from '../../customHooks/useAuth';
 import useAxiosSecure from '../../customHooks/useAxiosSecure';
+import calculateParcelCost from '../../utilities/calculateParcelCost';
 
 const SendParcel = () => {
     const {
@@ -33,31 +34,12 @@ const SendParcel = () => {
         console.log(data);
 
         // calculate parcel cost
-        const parcelWeight = parseFloat(data.ParcelWeight);
-        const isDocument = data.parcelType === 'document';
-        const isSameDistrict = data.senderDistrict === data.receiverDistrict;
-
-        let cost = 0;
-        if (isDocument) {
-            cost = isSameDistrict ? 60 : 80;
-        }
-        else {
-            if (parcelWeight < 3) {
-                cost = isSameDistrict ? 110 : 150;
-            }
-            else {
-                const minCharge = isSameDistrict ? 110 : 150;
-                const extraWeight = parcelWeight - 3;
-                const extraCharge = isSameDistrict ? (extraWeight * 40) : ((extraWeight * 40) + 40);
-                cost = minCharge + extraCharge;
-            }
-        }
-        console.log(cost);
+        const cost = calculateParcelCost(data);
 
         // confirm user to send parcel by using sweetalert2
         Swal.fire({
             title: "Confirm Parcel",
-            text: `Your parcel delivery charge is ৳${price}. Do you agree to pay this amount?`,
+            text: `Your parcel delivery charge is ৳${cost}. Do you agree to pay this amount?`,
             icon: "question",
             showCancelButton: true,
             confirmButtonText: "Agree & Continue",

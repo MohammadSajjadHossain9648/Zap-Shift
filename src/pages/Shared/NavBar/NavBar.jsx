@@ -13,6 +13,7 @@ const links = (
         <li><NavLink to="/coverage" className={activeClass}>Coverage</NavLink></li>
         <li><NavLink to="/about_us" className={activeClass}>About Us</NavLink></li>
         <li><NavLink to="/send_parcel" className={activeClass}>Send Parcel</NavLink></li>
+        <li><NavLink to="/pricing" className={activeClass}>Pricing</NavLink></li>
         <li><NavLink to="/rider" className={activeClass}>Be a Rider</NavLink></li>
     </>
 );

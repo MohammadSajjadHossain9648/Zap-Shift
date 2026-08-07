@@ -1,20 +1,21 @@
 import { createBrowserRouter } from "react-router";
-import Root from "../Layout/Root";
+import RootLayout from "../Layout/RootLayout";
 import Home from "../pages/Home/Home/Home";
 import Coverage from "../pages/Coverage/Coverage";
-import Authentication from "../Layout/Authentication";
+import AuthLayout from "../Layout/AuthLayout";
 import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import ForgetPassword from "../pages/Authentication/ForgetPassword/ForgetPassword";
 import PrivateRouter from "./PrivateRouter";
 import Rider from "../pages/Rider/Rider";
 import SendParcel from "../pages/SendParcel/SendParcel";
+import Pricing from "../pages/Pricing/Pricing";
 
 export const router = createBrowserRouter([
     // Root layout
     {
         path: "/",
-        Component: Root,
+        Component: RootLayout,
         children: [
             {
                 index: true,
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
                 loader: () => fetch('/warehouses.json').then(res => res.json())
             },
             {
+                path: 'pricing',
+                element: <Pricing></Pricing>,
+                loader: () => fetch('/warehouses.json').then(res => res.json())
+            },
+            {
                 path: 'rider',
                 element: <PrivateRouter>
                     <Rider></Rider>
@@ -41,7 +47,7 @@ export const router = createBrowserRouter([
     // Authentication layout
     {
         path: "/",
-        Component: Authentication,
+        Component: AuthLayout,
         children: [
             {
                 path: 'login',
