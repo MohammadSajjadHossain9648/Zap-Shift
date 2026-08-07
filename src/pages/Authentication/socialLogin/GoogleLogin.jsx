@@ -21,7 +21,10 @@ const googleLogin = ({ name = 'Login' }) => {
 
     return (
         <div className='fieldset'>
-            <button onClick={handleGoogleSignIn} className="btn form_btn2"> <img src={google} alt="google icon" className='w-6' />{name} with google</button>
+            <button onClick={handleGoogleSignIn} className="btn form_btn2">
+                <img src={google} alt="google icon" className='w-6' />
+                {name} with google
+            </button>
         </div>
     );
 };

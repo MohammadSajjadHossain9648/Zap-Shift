@@ -42,7 +42,10 @@ const ForgetPassword = () => {
                 )}
 
                 <button className="btn form_btn my-5">Send</button>
-                <p className="text-auth_secondary_text">Remember your password? <NavLink to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
+                <p className="text-auth_secondary_text">
+                    Remember your password?
+                    <NavLink to={'/login'} className='link-hover text-link_color'>Login</NavLink>
+                </p>
             </form>
         </div>
     );

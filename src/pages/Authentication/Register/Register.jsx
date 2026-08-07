@@ -108,7 +108,11 @@ const Register = () => {
                 )}
 
                 <button className="btn form_btn">Register</button>
-                <p className="text-auth_secondary_text">Already have an account? <NavLink state={location.state} to={'/login'} className='link-hover text-link_color'>Login</NavLink></p>
+                <p className="text-auth_secondary_text">
+                    Already have an account?
+                    <NavLink state={location.state} to={'/login'} className='link-hover text-link_color'>
+                        Login
+                    </NavLink></p>
                 <p className="text-auth_secondary_text mx-auto">Or</p>
                 <GoogleLogin name='Register'></GoogleLogin>
             </form>

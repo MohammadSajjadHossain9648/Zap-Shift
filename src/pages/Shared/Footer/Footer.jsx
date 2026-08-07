@@ -20,10 +20,10 @@ const Footer = () => {
 
             <div className="w-full border-t-2 border-b-2 border-dashed border-icon py-4">
                 <ul className='grid grid-flow-row md:grid-flow-col gap-4 md:gap-8'>
-                    <li><NavLink to={'#'}>Services</NavLink></li>
-                    <li><NavLink to={'/coverage'}>Coverage</NavLink></li>
-                    <li><NavLink to={'#'}>About Us</NavLink></li>
-                    <li><NavLink to={'#'}>Pricing</NavLink></li>
+                    <li><NavLink to="/services">Services</NavLink></li>
+                    <li><NavLink to="/coverage">Coverage</NavLink></li>
+                    <li><NavLink to="/about_us">About Us</NavLink></li>
+                    <li><NavLink to="/pricing">Pricing</NavLink></li>
                     <li><NavLink to={'#'}>Blog</NavLink></li>
                     <li><NavLink to={'#'}>Contact</NavLink></li>
                 </ul>

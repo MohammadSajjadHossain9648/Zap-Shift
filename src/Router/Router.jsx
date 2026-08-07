@@ -10,6 +10,7 @@ import PrivateRouter from "./PrivateRouter";
 import Rider from "../pages/Rider/Rider";
 import SendParcel from "../pages/SendParcel/SendParcel";
 import Pricing from "../pages/Pricing/Pricing";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
     // Root layout
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
                 path: 'coverage',
                 Component: Coverage,
                 loader: () => fetch('/warehouses.json').then(res => res.json())
+            },
+            {
+                path: 'about_us',
+                Component: AboutUs
             },
             {
                 path: 'send_parcel',
