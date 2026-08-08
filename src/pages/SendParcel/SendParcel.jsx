@@ -52,6 +52,9 @@ const SendParcel = () => {
                     .then(res => {
                         console.log('after saving data in database: ', res.data);
                     })
+                    .catch(err => {
+                        console.log(err);
+                    });
 
                 // Swal.fire({
                 //     title: "Deleted!",
@@ -147,11 +150,19 @@ const SendParcel = () => {
                             </fieldset>
                             <fieldset className="fieldset">
                                 <label className="label form_subtitle">Sender Phone No</label>
-                                <input type="number" className="input w-full placeholder:text-placeholder_color" placeholder="Sender Phone No"
-                                    {...register('senderPhoneNo', { required: true })}
+                                <input type="tel" className="input w-full placeholder:text-placeholder_color" placeholder="Sender Phone No"
+                                    {...register('senderPhoneNo', {
+                                        required: true, minLength: 11, maxLength: 11, pattern: /^01[3-9]\d{8}$/
+                                    })}
                                 />
                                 {errors.senderPhoneNo?.type === "required" && (
                                     <p role="alert" className='text-red-400'>Sender Phone No is required</p>
+                                )}
+                                {(errors.senderPhoneNo?.type === "minLength" || errors.senderPhoneNo?.type === "maxLength") && (
+                                    <p role="alert" className='text-red-400'>Phone number must be 11 digits</p>
+                                )}
+                                {errors.senderPhoneNo?.type === "pattern" && (
+                                    <p role="alert" className='text-red-400'>Enter a valid Bangladeshi phone number</p>
                                 )}
                             </fieldset>
                             <fieldset className="fieldset">
@@ -229,11 +240,19 @@ const SendParcel = () => {
                             </fieldset>
                             <fieldset className="fieldset">
                                 <label className="label form_subtitle">Receiver Contact No</label>
-                                <input type="number" className="input w-full placeholder:text-placeholder_color" placeholder="Receiver Contact No"
-                                    {...register('receiverContactNo', { required: true })}
+                                <input type="tel" className="input w-full placeholder:text-placeholder_color" placeholder="Receiver Contact No"
+                                    {...register('receiverContactNo', {
+                                        required: true, minLength: 11, maxLength: 11, pattern: /^01[3-9]\d{8}$/
+                                    })}
                                 />
                                 {errors.receiverContactNo?.type === "required" && (
                                     <p role="alert" className='text-red-400'>Receiver Contact No is required</p>
+                                )}
+                                {(errors.receiverContactNo?.type === "minLength" || errors.receiverContactNo?.type === "maxLength") && (
+                                    <p role="alert" className='text-red-400'>Phone number must be 11 digits</p>
+                                )}
+                                {errors.receiverContactNo?.type === "pattern" && (
+                                    <p role="alert" className='text-red-400'>Enter a valid Bangladeshi phone number</p>
                                 )}
                             </fieldset>
                             <fieldset className="fieldset">

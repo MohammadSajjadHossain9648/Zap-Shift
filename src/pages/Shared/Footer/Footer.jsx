@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="footer footer-horizontal footer-center text-secondary_text bg-footer_Bg p-5 md:p-20 mt-10 md:mt-20 rounded-4xl">
             <aside>
-                <NavLink to='/' onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                <NavLink to='/' onClick={() => window.scrollTo(0, 0)}>
                     <Logo textColor='text-white' size='text-2xl'></Logo>
                 </NavLink>
                 <p className="w-full md:w-[70%]">
@@ -20,12 +20,12 @@ const Footer = () => {
 
             <div className="w-full border-t-2 border-b-2 border-dashed border-icon py-4">
                 <ul className='grid grid-flow-row md:grid-flow-col gap-4 md:gap-8'>
-                    <li><NavLink to="/services">Services</NavLink></li>
-                    <li><NavLink to="/coverage">Coverage</NavLink></li>
-                    <li><NavLink to="/about_us">About Us</NavLink></li>
-                    <li><NavLink to="/pricing">Pricing</NavLink></li>
-                    <li><NavLink to={'#'}>Blog</NavLink></li>
-                    <li><NavLink to={'#'}>Contact</NavLink></li>
+                    <li><NavLink to="/services" onClick={() => window.scrollTo(0, 0)}>Services</NavLink></li>
+                    <li><NavLink to="/coverage" onClick={() => window.scrollTo(0, 0)}>Coverage</NavLink></li>
+                    <li><NavLink to="/about_us" onClick={() => window.scrollTo(0, 0)}>About Us</NavLink></li>
+                    <li><NavLink to="/pricing" onClick={() => window.scrollTo(0, 0)}>Pricing</NavLink></li>
+                    <li><NavLink to={'#'} onClick={() => window.scrollTo(0, 0)}>Blog</NavLink></li>
+                    <li><NavLink to={'#'} onClick={() => window.scrollTo(0, 0)}>Contact</NavLink></li>
                 </ul>
             </div>
 
